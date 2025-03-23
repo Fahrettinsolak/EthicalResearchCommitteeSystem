@@ -1,0 +1,6 @@
+@ERCS.ApplicationService_HostAddress = http://localhost:5231
+
+GET {{ERCS.ApplicationService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
