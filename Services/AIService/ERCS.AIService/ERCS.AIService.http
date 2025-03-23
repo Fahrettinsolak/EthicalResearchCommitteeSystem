@@ -1,6 +1,0 @@
-@ERCS.AIService_HostAddress = http://localhost:5215
-
-GET {{ERCS.AIService_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
