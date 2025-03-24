@@ -41,6 +41,67 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERCS.ReportService", "Servi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERCS.AdminService", "Services\AdminService\ERCS.AdminService\ERCS.AdminService.csproj", "{82CA35DD-548B-4C3F-94EF-4442D1A018C1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{6F34EA3B-93CE-4DE0-8E57-316B42C8E972}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", "{DF413262-967B-460D-BA1C-C1C70DF62208}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SeedData", "SeedData", "{3A4BE8CB-0E45-497C-8967-DDCFD73518CA}"
+	ProjectSection(SolutionItems) = preProject
+		deneme5.txt = deneme5.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{E5BF6CAA-7579-4CAC-B212-705C25FC7C8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configs", "Configs", "{D05D7553-F38A-486B-9E8B-832A9816E12A}"
+	ProjectSection(SolutionItems) = preProject
+		DatabaseConfig.cs = DatabaseConfig.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserServiceMigrations", "UserServiceMigrations", "{F7AFD526-5BD3-4E2B-BA29-2B47D01300AC}"
+	ProjectSection(SolutionItems) = preProject
+		ormig5.txt = ormig5.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationServiceMigrations", "ApplicationServiceMigrations", "{F561D0F6-6A52-4AA1-B5DE-E87253D8FD52}"
+	ProjectSection(SolutionItems) = preProject
+		ormig2.txt = ormig2.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommitteeServiceMigrations", "CommitteeServiceMigrations", "{D28CD190-A170-48E4-8523-959A24E87CA6}"
+	ProjectSection(SolutionItems) = preProject
+		ormig3.txt = ormig3.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdminServiceMigrations", "AdminServiceMigrations", "{FC4E5439-9DAD-4AB5-A274-FB113A2000B7}"
+	ProjectSection(SolutionItems) = preProject
+		ormig1.txt = ormig1.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationServiceMigrations", "NotificationServiceMigrations", "{E34B02BB-2DA9-4054-A3EF-418B8B768CB3}"
+	ProjectSection(SolutionItems) = preProject
+		ormig4.txt = ormig4.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PostgreSQL", "PostgreSQL", "{6794F628-F0F2-4B96-8E8D-4CFCACD5C489}"
+	ProjectSection(SolutionItems) = preProject
+		deneme4.txt = deneme4.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MongoDB", "MongoDB", "{6B6EA366-EEB8-421A-974C-B4DDCDCC62F9}"
+	ProjectSection(SolutionItems) = preProject
+		deneme3.txt = deneme3.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elasticsearch", "Elasticsearch", "{068B0C0F-AB0D-42FD-A754-8446BF68C107}"
+	ProjectSection(SolutionItems) = preProject
+		deneme2.txt = deneme2.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backup", "Backup", "{89090BD2-B799-4DB8-8775-9481FB9E3C1F}"
+	ProjectSection(SolutionItems) = preProject
+		deneme.txt = deneme.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,6 +240,19 @@ Global
 		{0A485249-9E27-47FD-B29D-0E1D91C86D7D} = {A59BA883-0ADE-4930-815E-AAAA87183C7B}
 		{40312BE1-2C32-4406-869A-5020C312516E} = {0A485249-9E27-47FD-B29D-0E1D91C86D7D}
 		{82CA35DD-548B-4C3F-94EF-4442D1A018C1} = {FF4963A8-8C4C-4BC1-93FD-BA8F2F4FC125}
+		{DF413262-967B-460D-BA1C-C1C70DF62208} = {6F34EA3B-93CE-4DE0-8E57-316B42C8E972}
+		{3A4BE8CB-0E45-497C-8967-DDCFD73518CA} = {6F34EA3B-93CE-4DE0-8E57-316B42C8E972}
+		{E5BF6CAA-7579-4CAC-B212-705C25FC7C8C} = {6F34EA3B-93CE-4DE0-8E57-316B42C8E972}
+		{D05D7553-F38A-486B-9E8B-832A9816E12A} = {6F34EA3B-93CE-4DE0-8E57-316B42C8E972}
+		{F7AFD526-5BD3-4E2B-BA29-2B47D01300AC} = {DF413262-967B-460D-BA1C-C1C70DF62208}
+		{F561D0F6-6A52-4AA1-B5DE-E87253D8FD52} = {DF413262-967B-460D-BA1C-C1C70DF62208}
+		{D28CD190-A170-48E4-8523-959A24E87CA6} = {DF413262-967B-460D-BA1C-C1C70DF62208}
+		{FC4E5439-9DAD-4AB5-A274-FB113A2000B7} = {DF413262-967B-460D-BA1C-C1C70DF62208}
+		{E34B02BB-2DA9-4054-A3EF-418B8B768CB3} = {DF413262-967B-460D-BA1C-C1C70DF62208}
+		{6794F628-F0F2-4B96-8E8D-4CFCACD5C489} = {E5BF6CAA-7579-4CAC-B212-705C25FC7C8C}
+		{6B6EA366-EEB8-421A-974C-B4DDCDCC62F9} = {E5BF6CAA-7579-4CAC-B212-705C25FC7C8C}
+		{068B0C0F-AB0D-42FD-A754-8446BF68C107} = {E5BF6CAA-7579-4CAC-B212-705C25FC7C8C}
+		{89090BD2-B799-4DB8-8775-9481FB9E3C1F} = {E5BF6CAA-7579-4CAC-B212-705C25FC7C8C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DFF587F-ACAC-4F61-BAEA-60B0319CC1B9}
