@@ -41,6 +41,61 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERCS.ReportService", "Servi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERCS.AdminService", "Services\AdminService\ERCS.AdminService\ERCS.AdminService.csproj", "{82CA35DD-548B-4C3F-94EF-4442D1A018C1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{D68EA84F-91D0-4BFC-8F55-5A011AAEFD99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Volumes", "Volumes", "{F0BC3AE8-EF29-4482-B343-896062FADF34}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		es-volume = es-volume
+		mongo-volume = mongo-volume
+		pg-volume = pg-volume
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{7065CE32-EA72-4820-988F-C63158EEC124}"
+	ProjectSection(SolutionItems) = preProject
+		build-all.sh = build-all.sh
+		clean-docker.sh = clean-docker.sh
+		start-all.sh = start-all.sh
+		stop-all.sh = stop-all.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{3C5CA4EB-9F04-41D2-B9A8-D1FF28979738}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile-AdminService = Dockerfile-AdminService
+		Dockerfile-AIService = Dockerfile-AIService
+		Dockerfile-ApplicationService = Dockerfile-ApplicationService
+		Dockerfile-CommitteeService = Dockerfile-CommitteeService
+		Dockerfile-NotificationService = Dockerfile-NotificationService
+		Dockerfile-ReportService = Dockerfile-ReportService
+		Dockerfile-UserService = Dockerfile-UserService
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Databases", "Databases", "{D3958F64-8F51-41D2-85D3-986238DCD80B}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile-Elasticsearch = Dockerfile-Elasticsearch
+		Dockerfile-Kibana = Dockerfile-Kibana
+		Dockerfile-MongoDB = Dockerfile-MongoDB
+		Dockerfile-PostgreSQL = Dockerfile-PostgreSQL
+		Dockerfile-RabbitMQ = Dockerfile-RabbitMQ
+		Dockerfile-Redis = Dockerfile-Redis
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configs", "Configs", "{220D032D-DEC4-4D1D-BCD2-36F35BBDE228}"
+	ProjectSection(SolutionItems) = preProject
+		.env = .env
+		elasticsearch.yml = elasticsearch.yml
+		mongo-init.js = mongo-init.js
+		nginx.conf = nginx.conf
+		postgres-init.sql = postgres-init.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Compose-Files", "Compose-Files", "{6B392374-5BB0-4501-8D9B-5DD8AC21EB20}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.ci.yml = docker-compose.ci.yml
+		docker-compose.dev.yml = docker-compose.dev.yml
+		docker-compose.prod.yml = docker-compose.prod.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,6 +234,12 @@ Global
 		{0A485249-9E27-47FD-B29D-0E1D91C86D7D} = {A59BA883-0ADE-4930-815E-AAAA87183C7B}
 		{40312BE1-2C32-4406-869A-5020C312516E} = {0A485249-9E27-47FD-B29D-0E1D91C86D7D}
 		{82CA35DD-548B-4C3F-94EF-4442D1A018C1} = {FF4963A8-8C4C-4BC1-93FD-BA8F2F4FC125}
+		{F0BC3AE8-EF29-4482-B343-896062FADF34} = {D68EA84F-91D0-4BFC-8F55-5A011AAEFD99}
+		{7065CE32-EA72-4820-988F-C63158EEC124} = {D68EA84F-91D0-4BFC-8F55-5A011AAEFD99}
+		{3C5CA4EB-9F04-41D2-B9A8-D1FF28979738} = {D68EA84F-91D0-4BFC-8F55-5A011AAEFD99}
+		{D3958F64-8F51-41D2-85D3-986238DCD80B} = {D68EA84F-91D0-4BFC-8F55-5A011AAEFD99}
+		{220D032D-DEC4-4D1D-BCD2-36F35BBDE228} = {D68EA84F-91D0-4BFC-8F55-5A011AAEFD99}
+		{6B392374-5BB0-4501-8D9B-5DD8AC21EB20} = {D68EA84F-91D0-4BFC-8F55-5A011AAEFD99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DFF587F-ACAC-4F61-BAEA-60B0319CC1B9}
