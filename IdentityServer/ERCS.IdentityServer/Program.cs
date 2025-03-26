@@ -1,20 +1,25 @@
+using ERCS.IdentityServer.Configurations;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// IdentityServer setup
+builder.Services.AddIdentityServer()
+    .AddInMemoryIdentityResources(IdentityResources.GetIdentityResources())
+    .AddInMemoryApiScopes(ApiScopes.GetApiScopes())
+    .AddInMemoryClients(Clients.GetClients())
+    .AddDeveloperSigningCredential();
+
 builder.WebHost.ConfigureKestrel(options =>
 {
-    options.ListenAnyIP(5007); // Uygulama 5007 portunda çalýþýr
+    options.ListenAnyIP(5007);
 });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -23,6 +28,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseRouting();
+app.UseIdentityServer();
 app.UseAuthorization();
 
 app.MapControllers();
