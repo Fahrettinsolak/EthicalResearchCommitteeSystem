@@ -1,0 +1,37 @@
+# 1. Build aþamasý için .NET SDK imajý
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+# 2. Çalýþma dizini
+WORKDIR /src
+
+COPY ./Common ./Common
+
+# 3. Proje dosyasýný kopyala
+COPY ./APIGateway/ERCS.APIGateway/ERCS.APIGateway.csproj ./ERCS.APIGateway/
+
+# 4. NuGet restore iþlemi
+RUN dotnet restore ./ERCS.APIGateway/ERCS.APIGateway.csproj
+
+# 5. Geri kalan tüm dosyalarý kopyala
+COPY ./APIGateway/ERCS.APIGateway/. ./ERCS.APIGateway/
+
+# 6. Yayýnla (publish)
+WORKDIR /src/ERCS.APIGateway
+RUN dotnet publish -c Release -o /app/publish
+
+# ----------------------------------------------------------
+
+# 7. Runtime aþamasý için daha hafif image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+
+# 8. Uygulama klasörüne geç
+WORKDIR /app
+
+# 9. Build edilen dosyalarý al
+COPY --from=build /app/publish .
+
+# 10. Gerekirse port tanýmla (örneðin 5006)
+EXPOSE 5006
+
+# 11. Çalýþtýr
+ENTRYPOINT ["dotnet", "ERCS.APIGateway.dll"]
