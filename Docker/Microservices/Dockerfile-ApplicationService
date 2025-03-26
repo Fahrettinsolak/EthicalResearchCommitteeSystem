@@ -1,0 +1,33 @@
+# 1. .NET SDK ile build aþamasýný baþlat
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+# 2. Ana dizine gir
+WORKDIR /src
+
+# 3. Proje dosyasýný kopyala
+COPY Services/ApplicationService/ERCS.ApplicationService/ERCS.ApplicationService.csproj .
+
+# 4. Restore iþlemi
+RUN dotnet restore ERCS.ApplicationService.csproj
+
+# 5. Tüm kaynaklarý düz klasöre kopyala
+COPY Services/ApplicationService/. .
+
+# 6. Build ve publish
+RUN dotnet publish -c Release -o /app/publish
+
+# -------------------------------------------
+
+# 7. Runtime image (sadece çalýþtýrma için)
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+
+WORKDIR /app
+
+# 8. Publish edilen çýktýyý al
+COPY --from=build /app/publish .
+
+# 9. Portu dýþarý aç
+EXPOSE 5001
+
+# 10. Uygulamayý çalýþtýr
+ENTRYPOINT ["dotnet", "ERCS.ApplicationService.dll"]
