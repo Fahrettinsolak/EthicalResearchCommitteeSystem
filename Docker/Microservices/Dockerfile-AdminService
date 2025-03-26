@@ -4,6 +4,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 # 2. Ana dizine gir
 WORKDIR /src
 
+COPY ./Common ./Common
+
 # 3. Proje dosyasýný kopyala
 COPY Services/AdminService/ERCS.AdminService/ERCS.AdminService.csproj .
 
