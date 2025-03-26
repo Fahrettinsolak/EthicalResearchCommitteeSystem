@@ -1,0 +1,36 @@
+# 1. Build aþamasý için .NET SDK imajý
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+# 2. Çalýþma dizini
+WORKDIR /src
+
+COPY ./Common ./Common
+
+# 3. Proje dosyasýný kopyala
+COPY ./IdentityServer/ERCS.IdentityServer/ERCS.IdentityServer.csproj ./ERCS.IdentityServer/
+
+# 4. Restore iþlemi
+RUN dotnet restore ./ERCS.IdentityServer/ERCS.IdentityServer.csproj
+
+# 5. Geri kalan dosyalarý kopyala
+COPY ./IdentityServer/ERCS.IdentityServer/. ./ERCS.IdentityServer/
+
+# 6. Build ve publish
+WORKDIR /src/ERCS.IdentityServer
+RUN dotnet publish -c Release -o /app/publish
+
+# ----------------------------------------------------------
+
+# 7. Çalýþma (runtime) aþamasý
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+
+WORKDIR /app
+
+# 8. Yayýnlanan çýktýyý kopyala
+COPY --from=build /app/publish .
+
+# 9. Port aç (IdentityServer genelde 5007 gibi özel portlar kullanýr)
+EXPOSE 5007
+
+# 10. Çalýþtýr
+ENTRYPOINT ["dotnet", "ERCS.IdentityServer.dll"]

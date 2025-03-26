@@ -55,6 +55,24 @@ services:
     networks:
       - ercs-net
 
+  apigateway:
+    build:
+      context: ../../
+      dockerfile: Docker/Microservices/Dockerfile-APIGateway
+    ports:
+      - "5006:5006"
+    networks:
+      - ercs-net
+
+  identityserver:
+    build:
+      context: ../../
+      dockerfile: Docker/Microservices/Dockerfile-IdentityServer
+    ports:
+      - "5007:5007"
+    networks:
+      - ercs-net
+
 networks:
   ercs-net:
     driver: bridge
