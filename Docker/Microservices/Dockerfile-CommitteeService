@@ -1,0 +1,33 @@
+# 1. .NET SDK ile build aþamasýný baþlat
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+# 2. Ana dizine gir
+WORKDIR /src
+
+# 3. Proje dosyasýný kopyala
+COPY Services/CommitteeService/ERCS.CommitteeService/ERCS.CommitteeService.csproj .
+
+# 4. Restore iþlemi
+RUN dotnet restore ERCS.CommitteeService.csproj
+
+# 5. Tüm kaynaklarý düz klasöre kopyala
+COPY Services/CommitteeService/. .
+
+# 6. Build ve publish
+RUN dotnet publish -c Release -o /app/publish
+
+# -------------------------------------------
+
+# 7. Runtime image (sadece çalýþtýrma için)
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+
+WORKDIR /app
+
+# 8. Publish edilen çýktýyý al
+COPY --from=build /app/publish .
+
+# 9. Portu dýþarý aç
+EXPOSE 5003
+
+# 10. Uygulamayý çalýþtýr
+ENTRYPOINT ["dotnet", "ERCS.CommitteeService.dll"]

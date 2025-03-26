@@ -7,6 +7,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5000); // Uygulama 5000 portunda çalýþýr
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
