@@ -91,9 +91,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configs", "Configs", "{220D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Compose-Files", "Compose-Files", "{6B392374-5BB0-4501-8D9B-5DD8AC21EB20}"
 	ProjectSection(SolutionItems) = preProject
-		docker-compose.ci.yml = docker-compose.ci.yml
-		docker-compose.dev.yml = docker-compose.dev.yml
-		docker-compose.prod.yml = docker-compose.prod.yml
+		Docker\Compose-Files\docker-compose.ci.yml = Docker\Compose-Files\docker-compose.ci.yml
+		Docker\Compose-Files\docker-compose.dev.yml = Docker\Compose-Files\docker-compose.dev.yml
+		Docker\Compose-Files\docker-compose.prod.yml = Docker\Compose-Files\docker-compose.prod.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{54DED9FF-2B44-4EE8-A0F0-E67CA1E864BB}"
@@ -104,32 +104,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserServiceMigrations", "UserServiceMigrations", "{D461F585-F12F-4164-B18A-133BE25285B6}"
 	ProjectSection(SolutionItems) = preProject
-		UserServiceMigrations.txt = UserServiceMigrations.txt
+		Database\Migrations\UserServiceMigrations\UserServiceMigrations.txt = Database\Migrations\UserServiceMigrations\UserServiceMigrations.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationServiceMigrations", "ApplicationServiceMigrations", "{59D98996-AA4C-4458-8081-304D9B474148}"
 	ProjectSection(SolutionItems) = preProject
-		ApplicationServiceMigrations.txt = ApplicationServiceMigrations.txt
+		Database\Migrations\ApplicationServiceMigrations\ApplicationServiceMigrations.txt = Database\Migrations\ApplicationServiceMigrations\ApplicationServiceMigrations.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommitteeServiceMigrations", "CommitteeServiceMigrations", "{E93E4096-8ED3-4018-932A-1C81D9C65345}"
 	ProjectSection(SolutionItems) = preProject
-		CommitteeServiceMigrations.txt = CommitteeServiceMigrations.txt
+		Database\Migrations\CommitteeServiceMigrations\CommitteeServiceMigrations.txt = Database\Migrations\CommitteeServiceMigrations\CommitteeServiceMigrations.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdminServiceMigrations", "AdminServiceMigrations", "{BAB3A3D2-AC80-4F25-BF2C-715EAD4B332B}"
 	ProjectSection(SolutionItems) = preProject
-		AdminServiceMigrations.txt = AdminServiceMigrations.txt
+		Database\Migrations\AdminServiceMigrations\AdminServiceMigrations.txt = Database\Migrations\AdminServiceMigrations\AdminServiceMigrations.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationServiceMigrations", "NotificationServiceMigrations", "{B7EB6A7D-482C-464C-A1FD-1B9EEAB708EB}"
 	ProjectSection(SolutionItems) = preProject
-		NotificationServiceMigrations.txt = NotificationServiceMigrations.txt
+		Database\Migrations\NotificationServiceMigrations\NotificationServiceMigrations.txt = Database\Migrations\NotificationServiceMigrations\NotificationServiceMigrations.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SeedData", "SeedData", "{9A64CD9F-678B-4AA4-94B9-C999340EDFCA}"
 	ProjectSection(SolutionItems) = preProject
-		UserSeedData.cs = UserSeedData.cs
+		Database\SeedData\UserSeedData.cs = Database\SeedData\UserSeedData.cs
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERCS.Frontends", "Frontends\ERCS.Frontends\ERCS.Frontends.csproj", "{C8FB77AB-0DEB-4BED-BF30-7E2706A19F29}"
@@ -138,44 +138,44 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{35B9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PostgreSQL", "PostgreSQL", "{019186BB-9A63-49E5-8A99-2511D469320C}"
 	ProjectSection(SolutionItems) = preProject
-		CreateTables.sql = CreateTables.sql
+		Database\Scripts\PostgreSQL\CreateTables.sql = Database\Scripts\PostgreSQL\CreateTables.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MongoDB", "MongoDB", "{A1ED4700-0059-4296-B4B0-62AE86A71B7A}"
 	ProjectSection(SolutionItems) = preProject
-		CreateCollections.js = CreateCollections.js
+		Database\Scripts\MongoDB\CreateCollections.js = Database\Scripts\MongoDB\CreateCollections.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elasticsearch", "Elasticsearch", "{9AB04AEC-3200-4AC4-8831-82B2263C0703}"
 	ProjectSection(SolutionItems) = preProject
-		CreateIndex.json = CreateIndex.json
+		Database\Scripts\Elasticsearch\CreateIndex.json = Database\Scripts\Elasticsearch\CreateIndex.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backup", "Backup", "{46ACDEFF-6984-4EAA-B410-EE6503AEB68E}"
 	ProjectSection(SolutionItems) = preProject
-		BackupPostgreSQL.sh = BackupPostgreSQL.sh
+		Database\Scripts\Backup\BackupPostgreSQL.sh = Database\Scripts\Backup\BackupPostgreSQL.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configs", "Configs", "{2830E6E3-67DB-498C-8E46-D8187BD5E8BB}"
 	ProjectSection(SolutionItems) = preProject
-		DatabaseConfig.cs = DatabaseConfig.cs
+		Database\Configs\DatabaseConfig.cs = Database\Configs\DatabaseConfig.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BE5A126E-DE0E-4C5E-9729-E2F76696A97E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{363E067E-CF43-447C-86DD-C72B0F660F65}"
 	ProjectSection(SolutionItems) = preProject
-		UnitTests.txt = UnitTests.txt
+		Database\Tests\UnitTests\UnitTests.txt = Database\Tests\UnitTests\UnitTests.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{23A32EEA-5770-4453-AFA4-2B54E65B0511}"
 	ProjectSection(SolutionItems) = preProject
-		IntegrationTests.txt = IntegrationTests.txt
+		Database\Tests\IntegrationTests\IntegrationTests.txt = Database\Tests\IntegrationTests\IntegrationTests.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PerformanceTests", "PerformanceTests", "{FD3B36B9-288B-425E-8D12-CE75E87769EE}"
 	ProjectSection(SolutionItems) = preProject
-		PerformanceTests.txt = PerformanceTests.txt
+		Database\Tests\PerformanceTests\PerformanceTests.txt = Database\Tests\PerformanceTests\PerformanceTests.txt
 	EndProjectSection
 EndProject
 Global

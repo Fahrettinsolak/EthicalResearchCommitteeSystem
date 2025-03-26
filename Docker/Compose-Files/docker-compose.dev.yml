@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  userservice:
+    build:
+      context: ../../
+      dockerfile: Docker/Microservices/Dockerfile-UserService
+    ports:
+      - "5000:5000"
+    networks:
+      - ercs-net
+
+  applicationservice:
+    build:
+      context: ../../
+      dockerfile: Docker/Microservices/Dockerfile-ApplicationService
+    ports:
+      - "5001:5001"
+    networks:
+      - ercs-net
+
+  notificationservice:
+    build:
+      context: ../../
+      dockerfile: Docker/Microservices/Dockerfile-NotificationService
+    ports:
+      - "5004:5004"
+    networks:
+      - ercs-net
+
+  reportservice:
+    build:
+      context: ../../
+      dockerfile: Docker/Microservices/Dockerfile-ReportService
+    ports:
+      - "5005:5005"
+    networks:
+      - ercs-net
+
+  committeeservice:
+    build:
+      context: ../../
+      dockerfile: Docker/Microservices/Dockerfile-CommitteeService
+    ports:
+      - "5003:5003"
+    networks:
+      - ercs-net
+
+  adminservice:
+    build:
+      context: ../../
+      dockerfile: Docker/Microservices/Dockerfile-AdminService
+    ports:
+      - "5002:5002"
+    networks:
+      - ercs-net
+
+networks:
+  ercs-net:
+    driver: bridge
