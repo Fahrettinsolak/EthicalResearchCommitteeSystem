@@ -1,0 +1,28 @@
+name: CI/CD Docker Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker images
+        run: |
+          docker build -f Docker/Microservices/Dockerfile-AdminService -t adminservice .
+          docker build -f Docker/Microservices/Dockerfile-APIGateway -t apiateway .
+          docker build -f Docker/Microservices/Dockerfile-ApplicationService -t applicationservice .
+          docker build -f Docker/Microservices/Dockerfile-CommitteeService -t committeeservice .
+          docker build -f Docker/Microservices/Dockerfile-IdentityServer -t identityserver .
+          docker build -f Docker/Microservices/Dockerfile-NotificationService -t notificationservice .
+          docker build -f Docker/Microservices/Dockerfile-ReportService -t reportservice .
+          docker build -f Docker/Microservices/Dockerfile-UserService -t applicationservice .
